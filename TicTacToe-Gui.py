@@ -24,7 +24,7 @@ class TicTacToe:
 
         n = len(self.board)
 
-        # checking rows
+        
         for i in range(n):
             win = True
             for j in range(n):
@@ -34,7 +34,7 @@ class TicTacToe:
             if win:
                 return win
 
-        # checking columns
+        
         for i in range(n):
             win = True
             for j in range(n):
@@ -44,7 +44,7 @@ class TicTacToe:
             if win:
                 return win
 
-        # checking diagonals
+      
         win = True
         for i in range(n):
             if self.board[i][i] != player:
@@ -93,32 +93,31 @@ class TicTacToe:
 
             self.show_board()
 
-            # taking user input
+           
             row, col = list(
                 map(int, input("Enter row and column numbers to fix spot: ").split()))
             print()
 
-            # fixing the spot
+           
             self.fix_spot(row - 1, col - 1, player)
 
-            # checking whether current player is won or not
+            
             if self.is_player_win(player):
                 print(f"Player {player} wins the game!")
                 break
 
-            # checking whether the game is draw or not
+           
             if self.is_board_filled():
                 print("Match Draw!")
                 break
 
-            # swapping the turn
+            
             player = self.swap_player_turn(player)
 
-        # showing the final view of board
+     
         print()
         self.show_board()
 
 
-# starting the game
 tic_tac_toe = TicTacToe()
 tic_tac_toe.start()
