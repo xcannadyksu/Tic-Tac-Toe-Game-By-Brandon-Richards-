@@ -50,18 +50,23 @@ def CheckWin():
     else:            
         Game=Running   
 
-
-
-        board[move-1] = current_player
-        if check_win(board, current_player):
-            print_board(board)
-            print("Player", current_player, "wins!")
-            break
-        if " " not in board:
-            print_board(board)
-            print("Tie game!")
-            break
-        current_player = players[(players.index(current_player) + 1) % 2]
-
-if __name__ == "__main__":
-    main()
+print("Tic-Tac-Toe Game")    
+print("Player 1 [X] --- Player 2 [O]\n")    
+print()    
+print()    
+print("Please Wait...")    
+time.sleep(3)    
+while(Game == Running):    
+    os.system('cls')    
+    DrawBoard()    
+    if(player % 2 != 0):    
+        print("Player 1's chance")    
+        Mark = 'X'    
+    else:    
+        print("Player 2's chance")    
+        Mark = 'O'    
+   choice = int(input("Enter the position between [1-9] where you want to mark : "))    
+    if(CheckPosition(choice)):    
+        board[choice] = Mark    
+        player+=1    
+        CheckWin() 
