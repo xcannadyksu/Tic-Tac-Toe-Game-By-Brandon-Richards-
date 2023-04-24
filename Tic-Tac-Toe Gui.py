@@ -1,3 +1,18 @@
+import os    
+import time    
+    
+board = [' ',' ',' ',' ',' ',' ',' ',' ',' ',' ']    
+player = 1    
+   
+
+Win = 1    
+Draw = -1    
+Running = 0    
+Stop = 1    
+
+Game = Running    
+Mark = 'X'    
+
 def DrawBoard():    
     print(" %c | %c | %c " % (board[1],board[2],board[3]))    
     print("___|___|___")    
@@ -6,6 +21,12 @@ def DrawBoard():
     print(" %c | %c | %c " % (board[7],board[8],board[9]))    
     print("   |   |   ")    
 
+def CheckPosition(x):    
+    if(board[x] == ' '):    
+        return True    
+    else:    
+        return False     
+    
 def check_win(board, player):
     if ((board[0] == player and board[1] == player and board[2] == player) or
         (board[3] == player and board[4] == player and board[5] == player) or
