@@ -27,17 +27,28 @@ def CheckPosition(x):
     else:    
         return False    
    
-  def winning_condition(user):
-    for i in range(0, len(bord)):
-        if (
-            (bord[0] == user and bord[1] == user and bord[2] == user)
-            or (bord[0] == user and bord[3] == user and bord[6] == user)
-            or (bord[2] == user and bord[5] == user and bord[8] == user)
-            or (bord[6] == user and bord[7] == user and bord[8] == user)
-            or (bord[3] == user and bord[4] == user and bord[5] == user)
-            or (bord[1] == user and bord[4] == user and bord[7] == user)
-            or (bord[0] == user and bord[4] == user and bord[8] == user)
-            or (bord[2] == user and bord[4] == user and bord[6] == user)  
+def CheckWin():    
+    global Game 
+    if(board[1] == board[2] and board[2] == board[3] and board[1] != ' '):    
+        Game = Win    
+    elif(board[4] == board[5] and board[5] == board[6] and board[4] != ' '):    
+        Game = Win    
+    elif(board[7] == board[8] and board[8] == board[9] and board[7] != ' '):    
+        Game = Win     
+    elif(board[1] == board[4] and board[4] == board[7] and board[1] != ' '):    
+        Game = Win    
+    elif(board[2] == board[5] and board[5] == board[8] and board[2] != ' '):    
+        Game = Win    
+    elif(board[3] == board[6] and board[6] == board[9] and board[3] != ' '):    
+        Game=Win       
+    elif(board[1] == board[5] and board[5] == board[9] and board[5] != ' '):    
+        Game = Win    
+    elif(board[3] == board[5] and board[5] == board[7] and board[5] != ' '):    
+        Game=Win     
+    elif(board[1]!=' ' and board[2]!=' ' and board[3]!=' ' and board[4]!=' ' and board[5]!=' ' and board[6]!=' ' and board[7]!=' ' and board[8]!=' ' and board[9]!=' '):    
+        Game=Draw    
+    else:            
+        Game=Running 
     
 print("Tic-Tac-Toe Game")    
 print("Player 1 [X] --- Player 2 [O]\n")    
