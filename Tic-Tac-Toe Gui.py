@@ -51,12 +51,7 @@ def CheckWin():
         Game=Running   
 
 
-        print_board(board)
-        print("Player", current_player)
-        move = int(input("Enter a number from 1-9: "))
-        if board[move-1] != " ":
-            print("That move is already taken. Try again.")
-            continue
+
         board[move-1] = current_player
         if check_win(board, current_player):
             print_board(board)
