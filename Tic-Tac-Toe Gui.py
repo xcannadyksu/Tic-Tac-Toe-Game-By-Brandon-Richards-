@@ -4,7 +4,6 @@ import time
 board = [' ',' ',' ',' ',' ',' ',' ',' ',' ',' ']    
 player = 1    
    
-
 Win = 1    
 Draw = -1    
 Running = 0    
@@ -12,7 +11,6 @@ Stop = 1
 
 Game = Running    
 Mark = 'X'    
-
 def DrawBoard():    
     print(" %c | %c | %c " % (board[1],board[2],board[3]))    
     print("___|___|___")    
@@ -25,8 +23,7 @@ def CheckPosition(x):
     if(board[x] == ' '):    
         return True    
     else:    
-        return False     
-    
+        return False        
 def CheckWin():    
     global Game  
   if(board[1] == board[2] and board[2] == board[3] and board[1] != ' '):    
@@ -49,7 +46,6 @@ def CheckWin():
         Game=Draw    
     else:            
         Game=Running   
-
 print("Tic-Tac-Toe Game")    
 print("Player 1 [X] --- Player 2 [O]\n")    
 print()    
