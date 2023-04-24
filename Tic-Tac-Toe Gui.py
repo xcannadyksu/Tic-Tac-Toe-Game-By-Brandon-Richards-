@@ -70,3 +70,14 @@ while(Game == Running):
         board[choice] = Mark    
         player+=1    
         CheckWin() 
+     
+os.system('cls')    
+DrawBoard()    
+if(Game==Draw):    
+    print("Game Draw")    
+elif(Game==Win):    
+    player-=1    
+    if(player%2!=0):    
+        print("Player 1 Won")    
+    else:    
+        print("Player 2 Won")
