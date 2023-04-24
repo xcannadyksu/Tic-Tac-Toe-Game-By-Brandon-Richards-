@@ -27,24 +27,30 @@ def CheckPosition(x):
     else:    
         return False     
     
-def check_win(board, player):
-    if ((board[0] == player and board[1] == player and board[2] == player) or
-        (board[3] == player and board[4] == player and board[5] == player) or
-        (board[6] == player and board[7] == player and board[8] == player) or
-        (board[0] == player and board[3] == player and board[6] == player) or
-        (board[1] == player and board[4] == player and board[7] == player) or
-        (board[2] == player and board[5] == player and board[8] == player) or
-        (board[0] == player and board[4] == player and board[8] == player) or
-        (board[2] == player and board[4] == player and board[6] == player)):
-        return True
-    else:
-        return False
+def CheckWin():    
+    global Game  
+  if(board[1] == board[2] and board[2] == board[3] and board[1] != ' '):    
+        Game = Win    
+    elif(board[4] == board[5] and board[5] == board[6] and board[4] != ' '):    
+        Game = Win    
+    elif(board[7] == board[8] and board[8] == board[9] and board[7] != ' '):    
+        Game = Win  
+    elif(board[1] == board[4] and board[4] == board[7] and board[1] != ' '):    
+        Game = Win    
+    elif(board[2] == board[5] and board[5] == board[8] and board[2] != ' '):    
+        Game = Win    
+    elif(board[3] == board[6] and board[6] == board[9] and board[3] != ' '):    
+        Game=Win   
+    elif(board[1] == board[5] and board[5] == board[9] and board[5] != ' '):    
+        Game = Win    
+    elif(board[3] == board[5] and board[5] == board[7] and board[5] != ' '):    
+        Game=Win   
+   elif(board[1]!=' ' and board[2]!=' ' and board[3]!=' ' and board[4]!=' ' and board[5]!=' ' and board[6]!=' ' and board[7]!=' ' and board[8]!=' ' and board[9]!=' '):    
+        Game=Draw    
+    else:            
+        Game=Running   
 
-def main():
-    board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
-    players = ["X", "O"]
-    current_player = players[0]
-    while True:
+
         print_board(board)
         print("Player", current_player)
         move = int(input("Enter a number from 1-9: "))
