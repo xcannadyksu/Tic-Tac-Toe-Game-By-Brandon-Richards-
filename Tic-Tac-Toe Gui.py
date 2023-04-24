@@ -1,12 +1,10 @@
-
-def print_board(board):
-    print("-------------")
-    print("| " + board[0] + " | " + board[1] + " | " + board[2] + " |")
-    print("-------------")
-    print("| " + board[3] + " | " + board[4] + " | " + board[5] + " |")
-    print("-------------")
-    print("| " + board[6] + " | " + board[7] + " | " + board[8] + " |")
-    print("-------------")
+def DrawBoard():    
+    print(" %c | %c | %c " % (board[1],board[2],board[3]))    
+    print("___|___|___")    
+    print(" %c | %c | %c " % (board[4],board[5],board[6]))    
+    print("___|___|___")    
+    print(" %c | %c | %c " % (board[7],board[8],board[9]))    
+    print("   |   |   ")    
 
 def check_win(board, player):
     if ((board[0] == player and board[1] == player and board[2] == player) or
