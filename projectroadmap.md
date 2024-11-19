@@ -2,6 +2,7 @@
 - [x] Join KSU IS organization and create team
 - [x] Create Readme file and commit changes
 - [x] Find at least one source code
+- [ ] Make at least 6 code changes 
 - [x] Make sure that its in Python language
 - [ ] Read and run code to ensure it works
 - [ ] Submit Final project (December 2)
